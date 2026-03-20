@@ -28,6 +28,7 @@ More details about the encoder usage can be found under:
 - [refactor-execution-plan](Docs/refactor_execution_plan.md)
 - [refactor-status-tracker](Docs/refactor/status.md)
 - [platform-sync-runbook](Docs/refactor/platform_sync_runbook.md)
+- [session-snapshot](Docs/refactor/session_snapshot.md)
 
 ## System Requirements
 
