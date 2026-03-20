@@ -26,6 +26,8 @@ More details about the encoder usage can be found under:
 - [svt-hevc-encoder-user-guide](Docs/svt-hevc_encoder_user_guide.md)
 - [refactor-master-plan](Docs/refactor_master_plan.md)
 - [refactor-execution-plan](Docs/refactor_execution_plan.md)
+- [refactor-status-tracker](Docs/refactor/status.md)
+- [platform-sync-runbook](Docs/refactor/platform_sync_runbook.md)
 
 ## System Requirements
 
