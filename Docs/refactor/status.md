@@ -57,7 +57,7 @@ Preconditions:
 
 Current required conditions for completion:
 - Linux v3: run collect_env and configure_matrix scripts and attach logs.
-- Windows v4 (MSYS2): run collect_env and windows_msys2_configure scripts and attach logs (default and static-lto).
+- Windows v4 (MSYS2): run one-shot batch and attach logs (default and static-lto).
 - Keep default build behavior unchanged.
 
 Progress notes:
@@ -67,7 +67,7 @@ Progress notes:
   - SVT_ENABLE_FULL_STATIC
   - SVT_ENABLE_PORTABLE_RPATH
   - SVT_ENABLE_INSTALL_RPATH
-- Remaining mandatory synchronization step: Windows v4 (MSYS2) logs.
+- Remaining mandatory synchronization step: Windows v4 (MSYS2) one-shot logs.
 
 Done criteria:
 - Feature flags scaffolded (LTO/static/RPATH policy toggles).

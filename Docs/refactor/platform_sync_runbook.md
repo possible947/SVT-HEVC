@@ -18,6 +18,7 @@ This runbook defines when and how to synchronize refactor checkpoints across ava
    - autonomous script execution with captured logs.
 3. Logs are stored in repository under logs/refactor/<milestone>/<host>/.
 4. If a host is unavailable, milestone cannot be marked DONE.
+5. Windows host is treated as non-primary: required checks should be executed in one-shot batches.
 
 ## Required Checks by Milestone
 
@@ -49,6 +50,10 @@ Required logs:
 - logs/refactor/M1/linux-v3/configure-static-lto.log
 - logs/refactor/M1/windows-v4-msys2/configure-default.log
 - logs/refactor/M1/windows-v4-msys2/configure-static-lto.log
+- logs/refactor/M1/windows-v4-msys2/one-shot-summary.log
+
+Recommended Windows one-shot command:
+- scripts/refactor/windows_msys2_one_shot.sh M1 windows-v4-msys2
 
 ### M2 CPU Profiles v2/v3/v4
 
@@ -76,6 +81,7 @@ The recommended script locations are:
 - scripts/refactor/collect_env.sh
 - scripts/refactor/configure_matrix.sh
 - scripts/refactor/windows_msys2_configure.sh
+- scripts/refactor/windows_msys2_one_shot.sh
 
 Script outputs should include:
 - OS and compiler versions
