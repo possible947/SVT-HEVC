@@ -67,6 +67,14 @@ Progress notes:
   - SVT_ENABLE_FULL_STATIC
   - SVT_ENABLE_PORTABLE_RPATH
   - SVT_ENABLE_INSTALL_RPATH
+- Linux v3 + NUMA evidence collected with autonomous scripts:
+  - logs/refactor/M1/linux-v3-numa/env.log
+  - logs/refactor/M1/linux-v3-numa/configure-default.log
+  - logs/refactor/M1/linux-v3-numa/configure-static-lto.log
+- Linux v3 + NUMA build smoke completed for:
+  - default build tree
+  - static+LTO build tree
+- Linux v3 + NUMA runtime smoke completed using a tiny synthetic YUV input.
 - Remaining mandatory synchronization step: Windows v4 (MSYS2) logs.
 
 Done criteria:
@@ -76,6 +84,7 @@ Done criteria:
 
 Evidence:
 - logs/refactor/M1/linux-v3/*.log
+- logs/refactor/M1/linux-v3-numa/*.log
 - logs/refactor/M1/windows-v4-msys2/*.log
 
 ### M2 CPU Profiles v2/v3/v4 Scaffolding
@@ -112,3 +121,4 @@ Evidence:
 - 2026-03-20: Tracker created. M0 started.
 - 2026-03-20: M0 completed. M1 started with cross-host log conditions.
 - 2026-03-20: M1 Linux-v3 logs captured; awaiting Windows-v4-MSYS2 synchronization logs.
+- 2026-03-21: Added Linux-v3-NUMA configure/build/runtime smoke evidence for M1.
