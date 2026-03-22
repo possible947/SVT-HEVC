@@ -61,31 +61,28 @@ Current required conditions for completion:
 - Keep default build behavior unchanged.
 
 Progress notes:
-- Linux v3 evidence collected using autonomous scripts.
-- M1 scaffold options configured successfully on Linux v3:
-  - SVT_ENABLE_LTO
-  - SVT_ENABLE_FULL_STATIC
-  - SVT_ENABLE_PORTABLE_RPATH
-  - SVT_ENABLE_INSTALL_RPATH
-- Linux v3 + NUMA evidence collected with autonomous scripts:
-  - logs/refactor/M1/linux-v3-numa/env.log
-  - logs/refactor/M1/linux-v3-numa/configure-default.log
-  - logs/refactor/M1/linux-v3-numa/configure-static-lto.log
-- Linux v3 + NUMA build smoke completed for:
-  - default build tree
-  - static+LTO build tree
-- Linux v3 + NUMA runtime smoke completed using a tiny synthetic YUV input.
-- Remaining mandatory synchronization step: Windows v4 (MSYS2) logs.
+- Windows v4 (MSYS2) synchronization completed on Intel x86_64-v4 host.
+- Windows v4 (MSYS2) evidence collected on Intel x86_64-v4 host:
+  - logs/refactor/M1/windows-v4-msys2/env.log
+  - logs/refactor/M1/windows-v4-msys2/configure-default.log
+  - logs/refactor/M1/windows-v4-msys2/configure-static-lto.log
+- Windows native supplemental smoke evidence collected:
+  - logs/refactor/M1/windows-native/env.log
+  - logs/refactor/M1/windows-native/smoke-help.log
+  - logs/refactor/M1/windows-native/smoke-status.log
+  - logs/refactor/M1/windows-native/ctest-status.log
+- Remaining mandatory synchronization step: Linux v3 required logs are not present in this workspace:
+  - logs/refactor/M1/linux-v3/configure-default.log
+  - logs/refactor/M1/linux-v3/configure-static-lto.log
 
 Done criteria:
 - Feature flags scaffolded (LTO/static/RPATH policy toggles).
 - No behavior change in default build mode.
-- Linux configure/build smoke with logs.
+- Linux and Windows required host checks completed with logs.
 
 Evidence:
-- logs/refactor/M1/linux-v3/*.log
-- logs/refactor/M1/linux-v3-numa/*.log
 - logs/refactor/M1/windows-v4-msys2/*.log
+- logs/refactor/M1/windows-native/*.log
 
 ### M2 CPU Profiles v2/v3/v4 Scaffolding
 
@@ -122,3 +119,5 @@ Evidence:
 - 2026-03-20: M0 completed. M1 started with cross-host log conditions.
 - 2026-03-20: M1 Linux-v3 logs captured; awaiting Windows-v4-MSYS2 synchronization logs.
 - 2026-03-21: Added Linux-v3-NUMA configure/build/runtime smoke evidence for M1.
+- 2026-03-22: Added Windows-v4-MSYS2 configure evidence and Windows-native supplemental smoke logs for M1.
+- 2026-03-22: M1 reverted to IN_PROGRESS after artifact audit showed missing required Linux-v3 logs in current workspace.

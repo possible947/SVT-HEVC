@@ -18,6 +18,10 @@ Exit criteria:
 
 ## Sprint 1: Build-System Foundation (4-6 days)
 
+Current synchronization note (2026-03-22):
+- Windows v4 (MSYS2) configure evidence is complete in `logs/refactor/M1/windows-v4-msys2/`.
+- Linux v3 required configure logs are not present in this workspace yet; keep M1 open until `logs/refactor/M1/linux-v3/configure-default.log` and `logs/refactor/M1/linux-v3/configure-static-lto.log` are available.
+
 Tasks:
 - Replace global mutable compile flags with per-target options.
 - Add build options:
