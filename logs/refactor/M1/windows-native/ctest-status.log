@@ -1,0 +1,3 @@
+result=NOT_RUNNABLE
+source=RunCtest_CMakeTools
+message=CMake test returned code -1 with no discovered test output

@@ -5,6 +5,7 @@
 *.o
 *.bin
 *.log
+!logs/refactor/**/*.log
 Bin
 Build
 !Build/linux/build.sh

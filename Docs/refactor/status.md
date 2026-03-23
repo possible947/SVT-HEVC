@@ -50,15 +50,13 @@ Evidence:
 
 ### M1 Build-System Foundation
 
-Status: IN_PROGRESS
+Status: DONE
 
 Preconditions:
 - M0 completed.
 
 Current required conditions for completion:
-- Linux v3: run collect_env and configure_matrix scripts and attach logs.
-- Windows v4 (MSYS2): run collect_env and windows_msys2_configure scripts and attach logs (default and static-lto).
-- Keep default build behavior unchanged.
+- Completed.
 
 Progress notes:
 - Windows v4 (MSYS2) synchronization completed on Intel x86_64-v4 host.
@@ -71,9 +69,14 @@ Progress notes:
   - logs/refactor/M1/windows-native/smoke-help.log
   - logs/refactor/M1/windows-native/smoke-status.log
   - logs/refactor/M1/windows-native/ctest-status.log
-- Remaining mandatory synchronization step: Linux v3 required logs are not present in this workspace:
+- Linux v3 required configure evidence collected:
+  - logs/refactor/M1/linux-v3/env.log
   - logs/refactor/M1/linux-v3/configure-default.log
   - logs/refactor/M1/linux-v3/configure-static-lto.log
+- Linux v3 + NUMA supplemental evidence collected:
+  - logs/refactor/M1/linux-v3-numa/env.log
+  - logs/refactor/M1/linux-v3-numa/configure-default.log
+  - logs/refactor/M1/linux-v3-numa/configure-static-lto.log
 
 Done criteria:
 - Feature flags scaffolded (LTO/static/RPATH policy toggles).
@@ -81,6 +84,8 @@ Done criteria:
 - Linux and Windows required host checks completed with logs.
 
 Evidence:
+- logs/refactor/M1/linux-v3/*.log
+- logs/refactor/M1/linux-v3-numa/*.log
 - logs/refactor/M1/windows-v4-msys2/*.log
 - logs/refactor/M1/windows-native/*.log
 
@@ -121,3 +126,4 @@ Evidence:
 - 2026-03-21: Added Linux-v3-NUMA configure/build/runtime smoke evidence for M1.
 - 2026-03-22: Added Windows-v4-MSYS2 configure evidence and Windows-native supplemental smoke logs for M1.
 - 2026-03-22: M1 reverted to IN_PROGRESS after artifact audit showed missing required Linux-v3 logs in current workspace.
+- 2026-03-23: Added Linux-v3 required logs, imported Windows logs from windows/SVT-HEVC, and marked M1 DONE.

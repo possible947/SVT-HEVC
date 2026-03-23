@@ -1,0 +1,74 @@
+CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+-- The C compiler identification is GNU 15.2.0
+-- The ASM_NASM compiler identification is YASM
+-- Found assembler: C:/msys64/usr/bin/yasm.exe
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/msys64/ucrt64/bin/cc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- CMAKE_BUILD_TYPE = Release
+-- CMAKE_C_COMPILER = C:/msys64/ucrt64/bin/cc.exe
+-- CMAKE_ASM_NASM_COMPILER = C:/msys64/usr/bin/yasm.exe
+-- CMAKE_AR = C:/msys64/ucrt64/bin/ar.exe
+-- CMAKE_RANLIB = C:/msys64/ucrt64/bin/ranlib.exe
+-- CMAKE_INSTALL_PREFIX = C:/Program Files (x86)/svt-hevc
+-- SVT_ENABLE_LTO = OFF
+-- SVT_ENABLE_FULL_STATIC = OFF
+-- SVT_ENABLE_PORTABLE_RPATH = OFF
+-- SVT_ENABLE_INSTALL_RPATH = OFF
+-- Performing Test C_FLAG_Wall
+-- Performing Test C_FLAG_Wall - Success
+-- Performing Test C_FLAG_Wextra
+-- Performing Test C_FLAG_Wextra - Success
+-- Performing Test C_FLAG_Wformat
+-- Performing Test C_FLAG_Wformat - Success
+-- Performing Test C_FLAG_Wformat_security
+-- Performing Test C_FLAG_Wformat_security - Success
+-- Performing Test C_FLAG_fPIE
+-- Performing Test C_FLAG_fPIE - Success
+-- Performing Test C_FLAG_fPIC
+-- Performing Test C_FLAG_fPIC - Success
+-- Performing Test C_FLAG_D_FORTIFY_SOURCE_2
+-- Performing Test C_FLAG_D_FORTIFY_SOURCE_2 - Success
+-- Performing Test C_FLAG_GS
+-- Performing Test C_FLAG_GS - Failed
+-- Performing Test C_FLAG_sdl
+-- Performing Test C_FLAG_sdl - Failed
+-- Performing Test C_FLAG_fno_asynchronous_unwind_tables
+-- Performing Test C_FLAG_fno_asynchronous_unwind_tables - Success
+-- Performing Test C_FLAG_mxsave
+-- Performing Test C_FLAG_mxsave - Success
+-- Performing Test C_FLAG_O2
+-- Performing Test C_FLAG_O2 - Success
+-- Performing Test C_FLAG_O3
+-- Performing Test C_FLAG_O3 - Success
+-- Performing Test C_FLAG_O0
+-- Performing Test C_FLAG_O0 - Success
+-- Performing Test C_FLAG_msse2
+-- Performing Test C_FLAG_msse2 - Success
+-- Performing Test C_FLAG_msse4_1
+-- Performing Test C_FLAG_msse4_1 - Success
+-- Performing Test C_FLAG_static_intel
+-- Performing Test C_FLAG_static_intel - Failed
+-- Performing Test C_FLAG_mssse3
+-- Performing Test C_FLAG_mssse3 - Success
+-- Performing Test C_FLAG_mavx2
+-- Performing Test C_FLAG_mavx2 - Success
+-- Performing Test C_FLAG_Qwd10148
+-- Performing Test C_FLAG_Qwd10148 - Failed
+-- Performing Test C_FLAG_Qwd10010
+-- Performing Test C_FLAG_Qwd10010 - Failed
+-- Performing Test C_FLAG_Qwd10157
+-- Performing Test C_FLAG_Qwd10157 - Failed
+-- Configuring done (17.9s)
+-- Generating done (0.1s)
+-- Build files have been written to: E:/Projects/SVT-HEVC/build-refactor/M1/windows-v4-msys2/default

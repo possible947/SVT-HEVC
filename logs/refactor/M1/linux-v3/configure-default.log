@@ -1,0 +1,63 @@
+-- The C compiler identification is GNU 13.3.0
+-- The ASM_NASM compiler identification is NASM
+-- Found assembler: /usr/bin/nasm
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- CMAKE_BUILD_TYPE = Release
+-- CMAKE_C_COMPILER = /usr/bin/cc
+-- CMAKE_ASM_NASM_COMPILER = /usr/bin/nasm
+-- CMAKE_AR = /usr/bin/ar
+-- CMAKE_RANLIB = /usr/bin/ranlib
+-- CMAKE_INSTALL_PREFIX = /usr/local
+-- SVT_ENABLE_LTO = OFF
+-- SVT_ENABLE_FULL_STATIC = OFF
+-- SVT_ENABLE_PORTABLE_RPATH = OFF
+-- SVT_ENABLE_INSTALL_RPATH = OFF
+-- Performing Test C_FLAG_Wall
+-- Performing Test C_FLAG_Wall - Success
+-- Performing Test C_FLAG_Wextra
+-- Performing Test C_FLAG_Wextra - Success
+-- Performing Test C_FLAG_Wformat
+-- Performing Test C_FLAG_Wformat - Success
+-- Performing Test C_FLAG_Wformat_security
+-- Performing Test C_FLAG_Wformat_security - Success
+-- Performing Test C_FLAG_fPIE
+-- Performing Test C_FLAG_fPIE - Success
+-- Performing Test C_FLAG_fPIC
+-- Performing Test C_FLAG_fPIC - Success
+-- Performing Test C_FLAG_D_FORTIFY_SOURCE_2
+-- Performing Test C_FLAG_D_FORTIFY_SOURCE_2 - Success
+-- Performing Test C_FLAG_GS
+-- Performing Test C_FLAG_GS - Failed
+-- Performing Test C_FLAG_sdl
+-- Performing Test C_FLAG_sdl - Failed
+-- Performing Test C_FLAG_fstack_protector_strong
+-- Performing Test C_FLAG_fstack_protector_strong - Success
+-- Performing Test C_FLAG_O2
+-- Performing Test C_FLAG_O2 - Success
+-- Performing Test C_FLAG_O3
+-- Performing Test C_FLAG_O3 - Success
+-- Performing Test C_FLAG_O0
+-- Performing Test C_FLAG_O0 - Success
+-- Performing Test C_FLAG_msse2
+-- Performing Test C_FLAG_msse2 - Success
+-- Performing Test C_FLAG_msse4_1
+-- Performing Test C_FLAG_msse4_1 - Success
+-- Performing Test C_FLAG_static_intel
+-- Performing Test C_FLAG_static_intel - Failed
+-- Performing Test C_FLAG_mssse3
+-- Performing Test C_FLAG_mssse3 - Success
+-- Performing Test C_FLAG_mavx2
+-- Performing Test C_FLAG_mavx2 - Success
+-- Performing Test C_FLAG_Qwd10148
+-- Performing Test C_FLAG_Qwd10148 - Failed
+-- Performing Test C_FLAG_Qwd10010
+-- Performing Test C_FLAG_Qwd10010 - Failed
+-- Performing Test C_FLAG_Qwd10157
+-- Performing Test C_FLAG_Qwd10157 - Failed
+-- Configuring done (2.7s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/viktor/Work/Git/SVT-HEVC/build-refactor/M1/linux-v3/default
