@@ -3,21 +3,6 @@
 # SPDX - License - Identifier: BSD - 2 - Clause - Patent
 #
 
-# Include Encoder Subdirectories
-include_directories(${PROJECT_SOURCE_DIR}/Source/API/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/Codec/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/C_DEFAULT/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/ASM_SSE2/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/ASM_SSSE3/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/ASM_SSE4_1/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/ASM_AVX2/)
-
-link_directories(${PROJECT_SOURCE_DIR}/Source/Lib/ASM_SSE2/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/C_DEFAULT/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/ASM_SSSE3/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/ASM_SSE4_1/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/ASM_AVX2/)
-
 # Encoder Lib Source Files
 set(Codec_Source
     EbEncDecProcess.c
@@ -195,6 +180,16 @@ add_library(SvtHevcEnc
     EbString.h
     EbUnPackProcess.h
     EbUtility.h)
+
+target_include_directories(SvtHevcEnc
+    PRIVATE
+        ${PROJECT_SOURCE_DIR}/Source/API/
+        ${PROJECT_SOURCE_DIR}/Source/Lib/Codec/
+        ${PROJECT_SOURCE_DIR}/Source/Lib/C_DEFAULT/
+        ${PROJECT_SOURCE_DIR}/Source/Lib/ASM_SSE2/
+        ${PROJECT_SOURCE_DIR}/Source/Lib/ASM_SSSE3/
+        ${PROJECT_SOURCE_DIR}/Source/Lib/ASM_SSE4_1/
+        ${PROJECT_SOURCE_DIR}/Source/Lib/ASM_AVX2/)
 
 if(UNIX)
     set(LIBS "-lpthread")

@@ -29,6 +29,18 @@ More details about the encoder usage can be found under:
 - [refactor-status-tracker](Docs/refactor/status.md)
 - [platform-sync-runbook](Docs/refactor/platform_sync_runbook.md)
 
+## Fork Release Status (March 2026)
+
+This fork includes practical build and runtime updates for integration into custom pipelines:
+
+- Modernized CMake configuration defaults for local performance-focused builds.
+- Native CPU optimization path enabled via `-march=native` (non-MSVC) with explicit toggle support.
+- LTO/IPO support enabled by default when the toolchain supports it.
+- Portable runtime library search paths enabled for UNIX platforms (`$ORIGIN` on Linux, `@loader_path` on macOS).
+- CMake cleanup in codec-related directories by replacing global directory directives with target-scoped includes.
+
+Practical smoke validation was completed using real video input through `ffmpeg | SvtHevcEncApp` pipelines (FHD and 4K), with successful encoder completion.
+
 ## System Requirements
 
 ### Operating System
