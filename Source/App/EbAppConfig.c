@@ -575,7 +575,7 @@ void EbConfigCtor(EbConfig_t *configPtr)
     configPtr->unrestrictedMotionVector             = EB_TRUE;
 
     // Platform Specific Flags
-    configPtr->asmType                              = 1;
+    configPtr->asmType                              = SVT_DEFAULT_ASM_TYPE;
     configPtr->targetSocket                         = -1;
     configPtr->logicalProcessors                    = 0;
     configPtr->firstLogicalProcessor                = 0;

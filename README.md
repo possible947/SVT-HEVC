@@ -82,7 +82,7 @@ In order to run the highest resolution supported by the encoder, at least 64GB o
 - __Build Instructions__
   - Build the project by following the steps below in a windows command prompt:
     - In the main repository directory, cd to `<repo dir>\Build\windows`
-    - Run `build.bat [2019|2017|2015]` [This will automatically generate and build the project]
+    - Run `build.bat [2019|2017|2015] [isa=AUTO|isa=C_ONLY]` [This will automatically generate and build the project]
   - To Build the project using a generator other than Visual Studio
     - run `build.bat [ninja|msys|mingw|unix]` instead of the second command
     - Note: These are not officially supported and thus are not displayed in the help message.
@@ -109,7 +109,7 @@ In order to run the highest resolution supported by the encoder, at least 64GB o
 
     ``` bash
     cd Build/linux
-    ./build.sh [release|debug] [static|shared] [install]
+    ./build.sh [release|debug] [static|shared] [install] [isa=AUTO|isa=C_ONLY]
     # Requires sudo permission for installing
     # Run './build.sh -h' to see the full help
     ```
@@ -118,6 +118,12 @@ In order to run the highest resolution supported by the encoder, at least 64GB o
 
     ``` bash
     mkdir build && cd build && cmake .. -DCMAKE_BUILD_TYPE=<Release|Debug> && make -j $(nproc) && sudo make install
+    ```
+
+  - Select default runtime ISA policy during build:
+
+    ``` bash
+    cmake .. -DSVT_DEFAULT_ASM=<AUTO|C_ONLY>
     ```
 
 - __Sample Binaries location__
