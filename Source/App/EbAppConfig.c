@@ -519,9 +519,9 @@ void EbConfigCtor(EbConfig_t *configPtr)
     configPtr->separateFields                       = EB_FALSE;
 
     // Coding Structure
-    configPtr->hierarchicalLevels                   = 3;
+    configPtr->hierarchicalLevels                   = 0;
     configPtr->baseLayerSwitchMode                  = 0;
-    configPtr->predStructure                        = 2;
+    configPtr->predStructure                        = 0;
     configPtr->intraPeriod                          = -2;
     configPtr->intraRefreshType                     = -1;
 

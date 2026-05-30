@@ -2736,8 +2736,8 @@ EB_ERRORTYPE EbH265EncInitParameter(
     configPtr->encMode  = 7;
     configPtr->intraPeriodLength = -2;
     configPtr->intraRefreshType = CRA_REFRESH;
-    configPtr->hierarchicalLevels = 3;
-    configPtr->predStructure = EB_PRED_RANDOM_ACCESS;
+    configPtr->hierarchicalLevels = 0;
+    configPtr->predStructure = EB_PRED_LOW_DELAY_P;
     configPtr->disableDlfFlag = EB_FALSE;
     configPtr->enableSaoFlag = EB_TRUE;
     configPtr->useDefaultMeHme = EB_TRUE;
