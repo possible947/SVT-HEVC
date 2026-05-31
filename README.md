@@ -29,6 +29,27 @@ More details about the encoder usage can be found under:
 - [refactor-status-tracker](Docs/refactor/status.md)
 - [platform-sync-runbook](Docs/refactor/platform_sync_runbook.md)
 
+## Fork Release Status (March 2026)
+
+This fork includes practical build and runtime updates for integration into custom pipelines:
+
+- Modernized CMake configuration defaults for local performance-focused builds.
+- Native CPU optimization path enabled via `-march=native` (non-MSVC) with explicit toggle support.
+- LTO/IPO support enabled by default when the toolchain supports it.
+- Portable runtime library search paths enabled for UNIX platforms (`$ORIGIN` on Linux, `@loader_path` on macOS).
+- CMake cleanup in codec-related directories by replacing global directory directives with target-scoped includes.
+- Encoder-side compatibility adjustments for integration with `hq_converter`.
+- Flat QO distribution support for segmented encoding workflows.
+- Fixed QP-per-segment operation path for deterministic segment-level control.
+
+Practical smoke validation was completed using real video input through `ffmpeg | SvtHevcEncApp` pipelines (FHD and 4K), with successful encoder completion.
+
+### Fork Scope and Intended Usage
+
+This fork is maintained specifically for use with the external `hq_converter` project.
+The implementation direction and compatibility changes are focused on that integration scenario, including segment-oriented encoding with flat QO distribution and fixed QP per segment.
+General-purpose feature development outside of the `hq_converter` use case is out of scope for this fork.
+
 ## System Requirements
 
 ### Operating System

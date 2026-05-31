@@ -5,16 +5,6 @@
 
 # ASM_AVX2 Directory CMakeLists.txt
 
-# Include Encoder Subdirectories
-include_directories(${PROJECT_SOURCE_DIR}/Source/API/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/Codec/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/C_DEFAULT/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/ASM_SSE2/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/ASM_SSSE3/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/ASM_SSE4_1/
-    ${PROJECT_SOURCE_DIR}/Source/Lib/ASM_AVX2/)
-link_directories(${PROJECT_SOURCE_DIR}/Source/Lib/ASM_SSSE3/)
-
 set(flags_to_test
     -mavx2
     -static-intel
@@ -98,3 +88,13 @@ add_library(HEVC_ASM_AVX2 OBJECT
     EbPackUnPack_Intrinsic_AVX2.h
     EbPictureOperators_AVX2.h
     EbTransforms_AVX2.h)
+
+target_include_directories(HEVC_ASM_AVX2
+    PRIVATE
+        ${PROJECT_SOURCE_DIR}/Source/API/
+        ${PROJECT_SOURCE_DIR}/Source/Lib/Codec/
+        ${PROJECT_SOURCE_DIR}/Source/Lib/C_DEFAULT/
+        ${PROJECT_SOURCE_DIR}/Source/Lib/ASM_SSE2/
+        ${PROJECT_SOURCE_DIR}/Source/Lib/ASM_SSSE3/
+        ${PROJECT_SOURCE_DIR}/Source/Lib/ASM_SSE4_1/
+        ${PROJECT_SOURCE_DIR}/Source/Lib/ASM_AVX2/)
