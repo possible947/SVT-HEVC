@@ -9,10 +9,15 @@ set instdir=%CD%
 set "build=y"
 set "Release=y"
 set "Debug=y"
+set "SVT_DEFAULT_ASM="
 set "cmake_eflags=-DCMAKE_INSTALL_PREFIX=^"%SYSTEMDRIVE%\svt-encoders^""
 if NOT -%1-==-- call :args %*
 if exist CMakeCache.txt del /f /s /q CMakeCache.txt 1>nul
 if exist CMakeFiles rmdir /s /q CMakeFiles 1>nul
+
+if not "%SVT_DEFAULT_ASM%"=="" (
+    set "cmake_eflags=-DSVT_DEFAULT_ASM=%SVT_DEFAULT_ASM% %cmake_eflags%"
+)
 
 setlocal ENABLEDELAYEDEXPANSION
 for /f "usebackq tokens=2" %%f in (`cmake -G 2^>^&1 ^| findstr /i ^*`) do (
@@ -143,6 +148,20 @@ if -%1-==-- (
     echo Generating solution only
     set "build=n"
     shift
+) else if /I "%1:~0,4%"=="isa=" (
+    set "isa_value=%1"
+    set "isa_value=%isa_value:~4%"
+    if /I "%isa_value%"=="AUTO" (
+        echo Using ISA policy AUTO
+        set "SVT_DEFAULT_ASM=AUTO"
+    ) else if /I "%isa_value%"=="C_ONLY" (
+        echo Using ISA policy C_ONLY
+        set "SVT_DEFAULT_ASM=C_ONLY"
+    ) else (
+        echo Invalid ISA policy "%isa_value%". Expected AUTO or C_ONLY.
+        exit 1
+    )
+    shift
 ) else (
     echo Unknown Token "%1"
     exit 1
@@ -151,6 +170,6 @@ goto :args
 
 :help
     echo Batch file to build SVT-HEVC on Windows
-    echo Usage: build.bat [2019^|2017^|2015^|clean] [release|debug] [nobuild]
+    echo Usage: build.bat [2019^|2017^|2015^|clean] [release^|debug] [nobuild] [isa=AUTO^|isa=C_ONLY]
     exit
 goto :EOF

@@ -1010,7 +1010,7 @@ set_default_svt_configuration (EB_H265_ENC_CONFIGURATION * svt_config)
   svt_config->codeVpsSpsPps = 1;
   svt_config->fpsInVps = TRUE;
   svt_config->codeEosNal = FALSE;
-  svt_config->asmType = 1;
+  svt_config->asmType = SVT_DEFAULT_ASM_TYPE;
   svt_config->tileRowCount = PROP_TILE_ROW_DEFAULT;
   svt_config->tileColumnCount = PROP_TILE_COL_DEFAULT;
   svt_config->vbvMaxrate = PROP_VBV_MAX_RATE_DEFAULT;

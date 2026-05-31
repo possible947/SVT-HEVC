@@ -54,6 +54,7 @@ Usage: $0 [OPTION] ... -- [OPTIONS FOR CMAKE]
                             --cpp
     --clean, clean      Remove build and Bin folders
     --debug, debug      Build debug
+    --isa, isa=*        Set default runtime ISA policy [AUTO|C_ONLY]
     --shared, shared    Build shared libs
 -x, --static, static    Build static libs
 -i, --install, install  Install build [Default release]
@@ -62,6 +63,7 @@ Usage: $0 [OPTION] ... -- [OPTIONS FOR CMAKE]
 Example usage:
     build.sh -xi debug -- -G"Ninja"
     build.sh all cc=clang static release install
+    build.sh release isa=C_ONLY
 EOF
 }
 
@@ -161,6 +163,18 @@ parse_options() {
             fi
             shift
             ;;
+        isa=*)
+            isa_value=$(echo "${1#*=}" | tr '[:lower:]' '[:upper:]')
+            case "$isa_value" in
+            AUTO|C_ONLY)
+                CMAKE_EXTRA_FLAGS="$CMAKE_EXTRA_FLAGS -DSVT_DEFAULT_ASM=${isa_value}"
+                ;;
+            *)
+                die "Error, invalid ISA policy '$isa_value'. Expected AUTO or C_ONLY."
+                ;;
+            esac
+            shift
+            ;;
         cpp) CMAKE_EXTRA_FLAGS="$CMAKE_EXTRA_FLAGS -DCOMPILE_AS_CPP=ON" && shift ;;
         clean)
             for d in *; do
@@ -233,6 +247,10 @@ else
                 parse_options cxx="$2"
                 shift 2
                 ;;
+            isa)
+                parse_options isa="$2"
+                shift 2
+                ;;
             cpp)
                 parse_options cpp
                 shift
@@ -301,6 +319,10 @@ else
                 ;;
             cxx=*)
                 parse_options cxx="${1#*=}"
+                shift
+                ;;
+            isa=*)
+                parse_options isa="${1#*=}"
                 shift
                 ;;
             cpp)

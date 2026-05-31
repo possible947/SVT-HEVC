@@ -2777,7 +2777,7 @@ EB_ERRORTYPE EbH265EncInitParameter(
     configPtr->latencyMode = 0;
 
     // ASM Type
-    configPtr->asmType = 1;
+    configPtr->asmType = SVT_DEFAULT_ASM_TYPE;
 
     // Channel info
     configPtr->logicalProcessors = 0;
